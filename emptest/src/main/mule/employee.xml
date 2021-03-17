@@ -152,7 +152,8 @@ payload]]></ee:set-payload>
         <logger level="INFO" doc:name="Logger" doc:id="4759034f-382b-4a4a-918e-2ca3f4476502" message="==after transform message==#[payload]" />
     </flow>
     <flow name="get:\emp:employee-config">
-        <set-variable value="#[attributes.queryParams.empId]" doc:name="Set Variable" doc:id="c0df3d66-0cd1-41dc-897e-fa72f98032f3" variableName="empId" />
+        <logger level="INFO" doc:name="Logger" doc:id="4ee0214e-1729-4973-a9aa-fc0d344dbff4" />
+		<set-variable value="#[attributes.queryParams.empId]" doc:name="Set Variable" doc:id="c0df3d66-0cd1-41dc-897e-fa72f98032f3" variableName="empId" />
         <logger level="INFO" doc:name="Logger" doc:id="b0fbb675-fd0a-42c8-b74e-d710663a7871" message="== after set variable==#[attributes]" />
         <db:select doc:name="Select" doc:id="71ae22bb-46d4-4d25-9f11-9a0076ae8c2d" config-ref="Database_Config">
             <db:sql><![CDATA[select * from employee where empId=:empId]]></db:sql>
